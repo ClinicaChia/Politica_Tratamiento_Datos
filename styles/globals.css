@@ -1,16 +1,128 @@
+
+:root{
+  --primary : DarkBlue;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: Snow;
+    
+  }
+
+
+h1 {
+  font-size: 20px;
+  width: 90%;
+  text-align: center;
+  color: var(--primary);
+  margin-left: 5%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.encuesta {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 90%;
+  
+  margin-left: 5%;
+  box-shadow: 0px 0px 15px 10px #D4D4D4;
+  overflow: hidden;
+  
 }
 
-* {
-  box-sizing: border-box;
+.field{
+  margin-top: 50px;
+  width: 80%;
+  
+
+
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid var(--primary);
+  outline: none;
+  background-color: inherit;
+  width: 40%;
+  font-size: 18px;
+  transition: width 0.3s ease-in-out;
+  
+}
+
+  .field label{
+ 
+  margin-top: -0px;
+  color: gray;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.field:focus-within label,.field:hover label{
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: bold;
+
+}
+
+input[type="text"]:hover,input[type="text"]:focus{
+  border-bottom: 3px solid var(--primary);
+  width: 50%;
+}
+
+.prueba{
+  color: var(--primary);
+  font-size: 14;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+p{
+
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: justify;
+  font-size: 13px;
+  color: var(--primary);
+}
+
+.Canvas{
+  border:1px solid #000000;
+                
+                margin-top:30px;
+                width: 200;
+                height: 200;
+}
+
+.botonera{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  
+}
+
+.botonera button{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100px;
+  height: 40px;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  
+}
+
+input[type="checkbox"]{
+  margin-bottom: 20px;
 }

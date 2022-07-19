@@ -3,15 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3004",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3004",
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "mongodb": "^4.8.0",
     "next": "12.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-signature-canvas": "^1.0.6",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "eslint": "8.20.0",
