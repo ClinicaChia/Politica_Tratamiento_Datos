@@ -126,3 +126,63 @@ p{
 input[type="checkbox"]{
   margin-bottom: 20px;
 }
+
+h2{
+  font-size: 30px;
+  width: 90%;
+  text-align: center;
+  color: var(--primary);
+  margin-left: 5%;
+}
+
+.card-container{
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card{
+  margin-top: 20px;
+  width: 230px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  align-items: center;
+  
+  overflow: hidden;
+  box-shadow: 0px 0px 6px 5px #D4D4D4;
+
+}
+
+.part{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height:30px;
+  width: 90%;
+  margin-top: 2px;
+  gap: 3px;
+}
+
+img{
+  width: 200px;
+  height: 50px;
+}
+
+h5,h4 {
+  color: var(--primary);
+}
+
+h4{
+  text-align: center;
+}
+
+
+.titulo{
+  font-size: 30px;
+}
