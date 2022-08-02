@@ -15,7 +15,7 @@ function  PopUp ({close}) {
                     </section>
                         <section className="popBody">
                         
-                        <iframe src="https://docs.google.com/viewerng/viewer?url=https://www.clinicachia.com.co/Tratamiento%20de%20datos%20personales%20de%20pacientes.pdf&embedded=true" frameborder="0" height="100%" width="100%">
+                        <iframe src="https://docs.google.com/viewerng/viewer?url=https://www.clinicachia.com.co/Tratamiento%20de%20datos%20personales%20de%20pacientes.pdf&embedded=true"  height="100%" width="100%">
 </iframe>
                         </section>
             </div>
