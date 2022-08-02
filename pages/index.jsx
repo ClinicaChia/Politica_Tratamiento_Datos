@@ -13,6 +13,7 @@ export default function Home() {
   const [Acepto, setAcepto] = useState(false);
   const [open, setOpen] = useState(false);
   const signatureRef = useRef({});
+  const [Existe, setExiste] = useState(false);
 
 
   const showDoc = () => {
@@ -43,6 +44,16 @@ export default function Home() {
     
   }
 
+  const Verificar = () =>{
+
+    const res = axios.get("/api/queryCedula",{params:{Cedula}}).then(res => {
+      const data = res.data.hasId
+      
+      setExiste(data)
+      data?alert('😎 Encontramos que aun estas registrado en el sistema,si quieres cambiar algun dato, rellena el formulario y actualizaremos tu informacion '):alert('😢 No encontramos tu registro, debes rellenar el formulario')
+    })
+  }
+
 
   return (
     <>
@@ -52,6 +63,8 @@ export default function Home() {
         <Campo word={Nombre} setWord={setNombre} Label="Nombre:" />
 
         <Campo word={Cedula} setWord={setCedula} Label="Cedula:" />
+
+        <button className="Query" onClick={Verificar}>Consultar cedula</button>
 
         <Campo word={Celular} setWord={setCelular} Label="Celular:" />
 
