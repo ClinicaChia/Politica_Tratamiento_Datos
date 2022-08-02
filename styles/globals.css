@@ -197,7 +197,7 @@ span a{
 }
 
 .popUp{
-  height: 130%;
+  height: 110%;
   width: 90%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
@@ -243,4 +243,13 @@ span a{
   cursor: pointer;
   padding: 20px;
   color: var(--primary);
+}
+
+
+.search{
+
+  width: 70%;
+  margin-left: 15%;
+  font-size: 18px;
+  text-align: center;
 }

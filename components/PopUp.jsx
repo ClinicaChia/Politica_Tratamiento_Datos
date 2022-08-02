@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PopUp = ({close,open}) => {
+function  PopUp ({close}) {
     const cerrar = (e) => {
-        console.log("cerrando")
+        
         close(false)
     }
     return (
@@ -10,11 +10,13 @@ const PopUp = ({close,open}) => {
 
             <div className="popUpContend">
                     <section className="popHeader">
-                        <button onClick={cerrar()}>X</button>
+                        <button onClick={cerrar}>X</button>
                         
                     </section>
                         <section className="popBody">
-                        <iframe src="/Tratamiento de datos personales de pacientes.pdf" width="100%" height="100%"></iframe>
+                        
+                        <iframe src="https://docs.google.com/viewerng/viewer?url=https://www.clinicachia.com.co/Tratamiento%20de%20datos%20personales%20de%20pacientes.pdf&embedded=true" frameborder="0" height="100%" width="100%">
+</iframe>
                         </section>
             </div>
 

@@ -56,7 +56,7 @@ export default function Home() {
         <Campo word={Celular} setWord={setCelular} Label="Celular:" />
 
         <p>Autorizo que la Clínica Chía S.A utilice mis datos personales 
-          según la política de tratamientos de datos según lo dicta la norma 1581 de 
+          según la política de tratamientos de datos elaborada por la clinica, ajustada a la norma 1581 del 
           2012 para efectos de calidad. <span> <a onClick={showDoc}> (ver documento) </a> </span></p>
 
         <label>
@@ -74,7 +74,7 @@ export default function Home() {
       
     </div>
     
-     <PopUp close={setOpen} open={open}/>
+    {open && <PopUp close={setOpen}/>}
       
     
     </>

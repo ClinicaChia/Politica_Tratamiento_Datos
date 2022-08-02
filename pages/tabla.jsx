@@ -3,9 +3,9 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Card from '../components/card';
 import axios from 'axios';
 
-
 const Tabla = () => {
     
+    const [Fill,setFill] = useState('');
     const [data, setData] = React.useState([]);
     const [LastId, setLastId] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
@@ -15,7 +15,6 @@ const Tabla = () => {
         setData(Array.from({ length: 20 }));
         axios.post('/api/getData',{ID:LastId}).then(res => {
             const temp =  res.data.query;
-            console.log(temp);
             setData(data.concat(res.data.query));
             setLastId(res.data.query[res.data.query.length-1]._id);
             setLoading(false);
@@ -29,7 +28,6 @@ const Tabla = () => {
     const fetchMoreData = () => {
         axios.post('/api/getData',{ID:LastId}).then(res => {
             const temp =  res.data.query;
-            console.log(temp);
             setData(data.concat(res.data.query));
             setLastId(res.data.query[res.data.query.length-1]._id);
             setLoading(false);
@@ -39,15 +37,23 @@ const Tabla = () => {
         })
     }
 
+    const handleOnChange = (e) => {
+        
+        setFill(e.target.value);
+    }
     if(loading){
         return(
             <h4>Cargando...</h4>
         )
     }
+    //create  regex to search word in variable Fill
+    
+
     return (
         <div>
             <h1 className='titulo'>Soportes de firmas</h1>
 
+            <input className='search' placeholder='Digite el numero de cedula... ✍️'   onChange={handleOnChange}/>
             <InfiniteScroll
 
             dataLength={data.length}
@@ -58,22 +64,29 @@ const Tabla = () => {
             >   
             <div className='card-container'>
                 {
+                
                 data.map((item, index) => {
-                    console.log(item);
-                    return(
+                    const ex = new RegExp(Fill,'g');
 
-                        <Card nombre={item.Nombre} 
+                    if(ex.test(item.Cedula) || Fill === ''){
+                        return(
 
-                        celular={item.Celular}
-                        
-                        cedula={item.Cedula} 
+                            <Card nombre={item.Nombre} 
+    
+                            celular={item.Celular}
+                            
+                            cedula={item.Cedula} 
+    
+                            uri={item.URI}
+    
+                            acepto={item.Acepto}
+                            
+                            key={index}/>
+                        )
+                    }
 
-                        uri={item.URI}
-
-                        acepto={item.Acepto}
-                        
-                        key={index}/>
-                    )
+                    return null;
+                    
                 })}
             </div>
                 
