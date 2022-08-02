@@ -3,6 +3,7 @@ import React, { useState , useRef} from "react";
 import Campo from "../components/campo";
 import Canvas from "../components/canvas";
 import axios from "axios";
+import PopUp from "../components/popUp";
 
 export default function Home() {
   const [Nombre, setNombre] = useState("");
@@ -10,7 +11,14 @@ export default function Home() {
   const [Celular, setCelular] = useState("");
   const [URI, setURI] = useState("");
   const [Acepto, setAcepto] = useState(false);
+  const [open, setOpen] = useState(false);
   const signatureRef = useRef({});
+
+
+  const showDoc = () => {
+    setOpen(true);
+  }
+
   const onChange = (e) => {
 
     setAcepto(e.target.checked);
@@ -37,6 +45,7 @@ export default function Home() {
 
 
   return (
+    <>
     <div className="container">
       <h1>Encuesta Tratamiento de datos</h1>
       <section className="encuesta">
@@ -46,7 +55,9 @@ export default function Home() {
 
         <Campo word={Celular} setWord={setCelular} Label="Celular:" />
 
-        <p>Autorizo que la Clínica Chía S.A utilice mis datos personales según la política de tratamientos de datos según lo dicta la norma 1581 de 2012 para efectos de calidad.</p>
+        <p>Autorizo que la Clínica Chía S.A utilice mis datos personales 
+          según la política de tratamientos de datos según lo dicta la norma 1581 de 
+          2012 para efectos de calidad. <span> <a onClick={showDoc}> (ver documento) </a> </span></p>
 
         <label>
           <input type="checkbox" name="acepto" value={Acepto}  onChange={onChange}/> Acepto
@@ -60,6 +71,13 @@ export default function Home() {
         </div>
 
       </section>
+      
     </div>
+    
+     <PopUp close={setOpen} open={open}/>
+      
+    
+    </>
+    
   );
 }
