@@ -253,3 +253,15 @@ span a{
   font-size: 18px;
   text-align: center;
 }
+
+.Query{
+  margin-top: 50px;
+  width: 130px;
+  height: 30px;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}

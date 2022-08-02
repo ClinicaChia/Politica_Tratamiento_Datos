@@ -1,13 +1,10 @@
 import React,{useState} from 'react';
-
+//Se realiza una variable de estilos para cuando cambia el className
 const styles = {
     "border-bottom": "3px solid var(--primary)",
     "width": "50%"
   
   }
-
-
-
 
 export default function Campo({word,setWord,Label}) {
     

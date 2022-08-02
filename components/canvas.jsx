@@ -3,7 +3,7 @@ import SignatureCanvas from "react-signature-canvas";
 const Canvas = ({signatureRef,GenLink}) => {
     const [Heigth, setHeigth] = useState(null);
     
-    useEffect(() => {setHeigth(window.innerWidth)
+    useEffect(() => {setHeigth(window.innerWidth) //Se mira la altura del dispositvo por primera vez, para ajustar la pantalla
     
         console.log(window.innerWidth)
     
