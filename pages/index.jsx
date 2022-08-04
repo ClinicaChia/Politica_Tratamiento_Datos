@@ -80,7 +80,7 @@ export default function Home() {
 
         <p>Autorizo que la Clínica Chía S.A utilice mis datos personales 
           según la política de tratamientos de datos elaborada por la clinica, ajustada a la norma 1581 del 
-          2012 para efectos de calidad. <span> <a onClick={showDoc}> (ver documento) </a> </span></p>
+          2012 para efectos de calidad, asimismo aclaro el manifiesto de la atención medica<span> <a onClick={showDoc}> (ver documento) </a> </span></p>
 
         <label>
           <input type="checkbox" name="acepto" value={Acepto}  onChange={onChange}/> Acepto
