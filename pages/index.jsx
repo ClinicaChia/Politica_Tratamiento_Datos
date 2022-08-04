@@ -4,6 +4,7 @@ import Campo from "../components/campo";
 import Canvas from "../components/canvas";
 import axios from "axios";
 import PopUp from "../components/popUp";
+import FechaN from "../components/FechaN";
 
 export default function Home() {
   const [Nombre, setNombre] = useState("");
@@ -14,6 +15,9 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const signatureRef = useRef({});
   const [Existe, setExiste] = useState(false);
+  const [FechaE, setFechaE] = useState("");
+  const [FechaS, setFechaS] = useState("");
+  const [Servicio, setServicio] = useState("");
 
 
   const showDoc = () => {
@@ -33,7 +37,7 @@ export default function Home() {
 
   const Enviar = () => {
     if(Nombre!="" && Cedula!="" && Celular!="" && URI!=""){
-        axios.post("/api/postData",{Nombre,Cedula,Celular,URI,Acepto}).then(res => {
+        axios.post("/api/postData",{Nombre,Cedula,Celular,URI,Acepto,["FechaI"]:FechaE,FechaS,Servicio}).then(res => {
         alert(res.data);
       }
       )
@@ -68,6 +72,12 @@ export default function Home() {
 
         <Campo word={Celular} setWord={setCelular} Label="Celular:" />
 
+        <FechaN label={"Fecha de Ingreso"} word={FechaE} setWord={setFechaE}/>
+
+        <FechaN label={"Fecha de Egreso"} word={FechaS} setWord={setFechaS}/>
+
+        <Campo word={Servicio} setWord={setServicio} Label="Servicio:" />
+
         <p>Autorizo que la Clínica Chía S.A utilice mis datos personales 
           según la política de tratamientos de datos elaborada por la clinica, ajustada a la norma 1581 del 
           2012 para efectos de calidad. <span> <a onClick={showDoc}> (ver documento) </a> </span></p>
@@ -76,6 +86,9 @@ export default function Home() {
           <input type="checkbox" name="acepto" value={Acepto}  onChange={onChange}/> Acepto
         </label>
 
+        
+         
+        
         <Canvas signatureRef={signatureRef} GenLink={setURI}/>
 
         <div className="botonera">

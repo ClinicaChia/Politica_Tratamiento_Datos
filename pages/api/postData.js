@@ -16,13 +16,39 @@ export default  async function handler(req, res) {
     const client = await new MongoClient(mongoURI);
     const db = await client.db("Matriz");
     const pacientes = await db.collection("politicas");
-    const politica = await pacientes.insertOne({
+    console.log(body);
+    
+    const result = await pacientes.findOne({Cedula:body.Cedula});
+
+    if(result){
+      console.log("ya existe");
+      await pacientes.updateOne({Cedula:body.Cedula},{$set:
+      
+        {
+          Nombre: body.Nombre,
+          Cedula: body.Cedula,
+          Acepto: body.Acepto,
+          Celular: body.Celular,
+          FechaI: body.FechaI,
+          FechaF: body.FechaS,
+          Servicio: body.Servicio,
+          URI : body.URI
+      }
+      
+      });
+    }
+    else{
+      const politica = await pacientes.insertOne({
         Nombre: body.Nombre,
         Cedula: body.Cedula,
         Acepto: body.Acepto,
         Celular: body.Celular,
+        FechaI: body.FechaI,
+        FechaF: body.FechaS,
+        Servicio: body.Servicio,
         URI : body.URI
     });
+    }
 
     await client.close();
     
