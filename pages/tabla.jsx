@@ -70,6 +70,7 @@ const Tabla = () => {
                     const ex = new RegExp(Fill,'g');
 
                     if(ex.test(item.Cedula) || Fill === ''){
+                        
                         return(
 
                             <Card nombre={item.Nombre} 
@@ -81,6 +82,13 @@ const Tabla = () => {
                             uri={item.URI}
     
                             acepto={item.Acepto}
+
+                            servicio={item.Servicio}
+
+                            FechaI={item.FechaI}
+
+                            FechaS={item.FechaF}
+
                             
                             key={index}/>
                         )
