@@ -16,12 +16,11 @@ export default  async function handler(req, res) {
     const client = await new MongoClient(mongoURI);
     const db = await client.db("Matriz");
     const pacientes = await db.collection("politicas");
-    console.log(body);
-    
+   
     const result = await pacientes.findOne({Cedula:body.Cedula});
 
     if(result){
-      console.log("ya existe");
+   
       await pacientes.updateOne({Cedula:body.Cedula},{$set:
       
         {

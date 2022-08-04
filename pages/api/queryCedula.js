@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
     const query = await pacientes.findOne({ Cedula })
     const hasId = query? true : false
-    console.log(hasId)
+   
 
     res.status(200).json({ hasId })
   }

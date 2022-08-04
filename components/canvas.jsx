@@ -5,7 +5,7 @@ const Canvas = ({signatureRef,GenLink}) => {
     
     useEffect(() => {setHeigth(window.innerWidth) //Se mira la altura del dispositvo por primera vez, para ajustar la pantalla
     
-        console.log(window.innerWidth)
+       
     
     }, [Heigth]
     
