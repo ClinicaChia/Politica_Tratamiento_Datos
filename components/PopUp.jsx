@@ -3,7 +3,7 @@ import React from 'react';
 function  PopUp ({close}) {
     const cerrar = (e) => {
         
-        close(false)
+        close()
     }
     return (
         <div className="popUp">

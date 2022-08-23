@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({nombre,cedula,celular,uri,acepto,FechaI,FechaS,servicio}) => {
+const Card = ({nombre,cedula,celular,uri,AceptoPolitica,AceptoMedico,FechaI,FechaS,servicio}) => {
     return (
         <div className='card'>
             <h4>{nombre}</h4>
@@ -32,8 +32,13 @@ const Card = ({nombre,cedula,celular,uri,acepto,FechaI,FechaS,servicio}) => {
             </article>
 
             <article className='part'>
-                <h5>¿Aceptó?: </h5>
-                <h6>{`${acepto?"Si":"No"}`}</h6>
+                <h5>¿Aceptó la politica?: </h5>
+                <h6>{`${AceptoPolitica?"Si":"No"}`}</h6>
+            </article>
+
+            <article className='part'>
+                <h5>¿Aceptó tratamiento?: </h5>
+                <h6>{`${AceptoMedico?"Si":"No"}`}</h6>
             </article>
             
 

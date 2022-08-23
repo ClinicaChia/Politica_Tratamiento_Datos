@@ -11,8 +11,14 @@ export default function Home() {
   const [Cedula, setCedula] = useState("");
   const [Celular, setCelular] = useState("");
   const [URI, setURI] = useState("");
-  const [Acepto, setAcepto] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [Acepto, setAcepto] = useState({
+    "0": false,
+    "1": false,
+  });
+  const [open, setOpen] = useState({
+    "0": false,
+    "1": false,
+  });;
   const signatureRef = useRef({});
   const [Existe, setExiste] = useState(false);
   const [FechaE, setFechaE] = useState("");
@@ -20,13 +26,15 @@ export default function Home() {
   const [Servicio, setServicio] = useState("");
 
 
-  const showDoc = () => {
-    setOpen(true);
+  const showDoc = (e) => {
+    const id = e.target.id;
+    setOpen({open, [id]: true});
   }
 
   const onChange = (e) => {
-
-    setAcepto(e.target.checked);
+    const index = e.target.id;
+    console.log(index)
+    setAcepto({ ...Acepto,[index]: e.target.checked} );
   }
 
   const Limpiar = () => {
@@ -80,11 +88,19 @@ export default function Home() {
 
         <p>Autorizo que la Clínica Chía S.A utilice mis datos personales 
           según la política de tratamientos de datos elaborada por la clinica, ajustada a la norma 1581 del 
-          2012 para efectos de calidad, asimismo aclaro el manifiesto de la atención medica<span> <a onClick={showDoc}> (ver documento) </a> </span></p>
+          2012 para efectos de calidad, asimismo aclaro el manifiesto de la atención medica</p>
 
-        <label>
-          <input type="checkbox" name="acepto" value={Acepto}  onChange={onChange}/> Acepto
-        </label>
+        <div className="acept-form">
+          <label>
+          <input type="checkbox" id="0" name="acepto" value={Acepto["0"]}  onChange={onChange}/> Acepto el tratamiento de datos 
+          </label>
+          <span> <a id="0" onClick={showDoc}> (documento)</a> </span>
+        </div>
+
+        <div className="acept-form"  >
+          <input type="checkbox" id="1" name="acepto" value={Acepto["1"]}  onChange={onChange}/> Acepto la atención medica 
+          <span> <a id="1" onClick={showDoc}> (documento)</a> </span>
+        </div>
 
         
          
@@ -100,8 +116,9 @@ export default function Home() {
       
     </div>
     
-    {open && <PopUp close={setOpen}/>}
-      
+    {open["0"] && <PopUp close={()=>{setOpen({...open,"0":false})}}/>}
+    
+    {open["1"] && <PopUp close={()=>{setOpen({...open,"1":false})}}/>}
     
     </>
     

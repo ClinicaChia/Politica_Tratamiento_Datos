@@ -27,7 +27,8 @@ export default  async function handler(req, res) {
         {
           Nombre: body.Nombre,
           Cedula: body.Cedula,
-          Acepto: body.Acepto,
+          AceptoPolitica: body.Acepto["0"],
+          AceptoMedico: body.Acepto["1"],
           Celular: body.Celular,
           FechaI: body.FechaI,
           FechaF: body.FechaS,
@@ -41,7 +42,8 @@ export default  async function handler(req, res) {
       const politica = await pacientes.insertOne({
         Nombre: body.Nombre,
         Cedula: body.Cedula,
-        Acepto: body.Acepto,
+        AceptoPolitica: body.Acepto["0"],
+        AceptoMedico: body.Acepto["1"],
         Celular: body.Celular,
         FechaI: body.FechaI,
         FechaF: body.FechaS,

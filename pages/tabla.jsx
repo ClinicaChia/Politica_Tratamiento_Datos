@@ -81,7 +81,10 @@ const Tabla = () => {
     
                             uri={item.URI}
     
-                            acepto={item.Acepto}
+                            AceptoPolitica={item.AceptoPolitica}
+
+                            AceptoMedico={item.AceptoMedico}
+
 
                             servicio={item.Servicio}
 

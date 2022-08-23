@@ -125,6 +125,7 @@ p{
 
 input[type="checkbox"]{
   margin-bottom: 20px;
+
 }
 
 h2{
@@ -147,7 +148,7 @@ h2{
 .card{
   margin-top: 20px;
   width: 230px;
-  height: 310px;
+  height: 360px;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
@@ -194,10 +195,11 @@ span{
 
 span a{
   cursor: pointer;
+  font-size: 10px;
 }
 
 .popUp{
-  height: 110%;
+  height: 210%;
   width: 90%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
@@ -272,4 +274,12 @@ span a{
 
 input[type="datetime-local"]{
   margin-left: 10px;
+}
+
+.acept-form{
+  padding: 0px 10px 10px 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 13px;
 }
