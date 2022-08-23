@@ -16,7 +16,7 @@ const Tabla = () => {
         axios.post('/api/getData',{ID:LastId}).then(res => {
             const temp =  res.data.query;
             setData(data.concat(res.data.query));
-            console.log(res.data.query.length >1 && "se ejecuta" || '')
+            
             setLastId( res.data.query.length >1 && res.data.query[res.data.query.length-1]._id || '');
             setLoading(false);
             if(res.data.query.length<20){

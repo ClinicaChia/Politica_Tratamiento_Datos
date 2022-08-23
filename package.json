@@ -6,6 +6,7 @@
     "dev": "next dev -p 3004",
     "build": "next build",
     "start": "next start -p 3004",
+    "serve":"pm2 start server.js --name Politica",
     "lint": "next lint"
   },
   "dependencies": {
