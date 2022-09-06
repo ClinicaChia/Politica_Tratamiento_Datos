@@ -283,3 +283,9 @@ input[type="datetime-local"]{
   gap: 10px;
   font-size: 13px;
 }
+
+.docN{
+  
+  text-decoration: none;
+  color: red;
+}

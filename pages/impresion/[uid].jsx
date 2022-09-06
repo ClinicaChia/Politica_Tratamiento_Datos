@@ -50,10 +50,10 @@ const Impresion = ({user}) => {
 export async function getServerSideProps(context) {
 
   const cedula = context.query.uid;
-  console.log("http//:" + process.env.BASE_PATH + "api/getOne")
+
   const user = await (await fetch("http://" + process.env.BASE_PATH + "api/getOne?cedula="+cedula)).json();
 
-  console.log(user)
+
     
     return {
       props: {user}, // will be passed to the page component as props

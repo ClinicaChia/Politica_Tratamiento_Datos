@@ -129,6 +129,15 @@
     color: var(--primary);
 }
 
+.docN{
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .docN:hover{
+    opacity: 0.5;
+  }
+
 @media print {
     .Impresion {display: none;}
   }

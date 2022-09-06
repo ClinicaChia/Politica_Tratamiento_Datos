@@ -33,7 +33,7 @@ export default function Home() {
 
   const onChange = (e) => {
     const index = e.target.id;
-    console.log(index)
+  
     setAcepto({ ...Acepto,[index]: e.target.checked} );
   }
 

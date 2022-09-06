@@ -1,6 +1,9 @@
 import React from 'react';
+import styles from '../styles/formato.module.css';
+import { useRouter } from 'next/router'
 
 const Card = ({nombre,cedula,celular,uri,AceptoPolitica,AceptoMedico,FechaI,FechaS,servicio}) => {
+    const router = useRouter();
     return (
         <div className='card'>
             <h4>{nombre}</h4>
@@ -32,7 +35,12 @@ const Card = ({nombre,cedula,celular,uri,AceptoPolitica,AceptoMedico,FechaI,Fech
             </article>
 
             <article className='part'>
-                <h5>¿Aceptó la politica?: </h5>
+                <h5 className={styles.docN} 
+                onClick={()=>{
+                    router.push(`/impresion/${cedula}`)
+                }} 
+                
+                >¿Aceptó la politica?: </h5>
                 <h6>{`${AceptoPolitica?"Si":"No"}`}</h6>
             </article>
 
