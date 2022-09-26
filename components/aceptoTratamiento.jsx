@@ -11,7 +11,7 @@ const AceptoPolitica = ({User}) => {
 
         <button onClick={()=>print()} className={styles.Impresion} >Imprimir</button>
 
-        <Cabezera />
+        <Cabezera codigo={"GRF-F.-0008-V01"} />
 
         <p>YO: <span className={styles.bold}>{User.Nombre}</span>  identificado con la cedula <span className={styles.bold} >{User.Cedula}</span>, por medio del presente documento, obrando en calidad de
         paciente en pleno uso de mis facultades mentales manifiesto que {User.AceptoMedico? "he" : "no he"} recibido atención médica y/o hospitalaria en la Clínica Chía S.A.

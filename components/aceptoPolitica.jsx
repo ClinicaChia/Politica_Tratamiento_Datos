@@ -12,7 +12,7 @@ const AceptoPolitica = ({User}) => {
 
         <button onClick={()=>print()} className={styles.Impresion} >Imprimir</button>
 
-        <Cabezera />
+        <Cabezera codigo={"GC-AR-F-0007-V03"} />
 
         <Texto />
         

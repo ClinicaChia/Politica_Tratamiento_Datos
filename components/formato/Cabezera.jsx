@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../../styles/formato.module.css';
 import Image from 'next/image'
-export default function Cabezera() {
+export default function Cabezera({codigo}) {
   return (
     <div className={styles.Cabezera_Container}>
 
@@ -32,7 +32,7 @@ export default function Cabezera() {
                     
                     <h4 className={styles.bold}>Autorización para la recolección de datos personales y Manifiesto de atención médica</h4>
                     <h3 className={styles.bold} >CÓDIGO:</h3>
-                    <h4 >GC-AR-F-0007-V03</h4>
+                    <h4 >{codigo}</h4>
             </section>
 
 
