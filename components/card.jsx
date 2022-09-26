@@ -37,7 +37,7 @@ const Card = ({nombre,cedula,celular,uri,AceptoPolitica,AceptoMedico,FechaI,Fech
             <article className='part'>
                 <h5 className={styles.docN} 
                 onClick={()=>{
-                    router.push(`/impresion/${cedula}`)
+                    router.push(`/impresion/${cedula}/aceptoPolitica`)
                 }} 
                 
                 >¿Aceptó la politica?: </h5>
@@ -45,7 +45,13 @@ const Card = ({nombre,cedula,celular,uri,AceptoPolitica,AceptoMedico,FechaI,Fech
             </article>
 
             <article className='part'>
-                <h5>¿Aceptó tratamiento?: </h5>
+                <h5 className={styles.docN} 
+                
+                onClick={()=>{
+                    router.push(`/impresion/${cedula}/aceptoTratamiento`)
+                }}
+                
+                >¿Aceptó tratamiento?: </h5>
                 <h6>{`${AceptoMedico?"Si":"No"}`}</h6>
             </article>
             
