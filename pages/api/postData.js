@@ -2,7 +2,7 @@ const fs = require("fs"),
 request = require("request");
 const { MongoClient } = require("mongodb");
 
-const mongoURI = "mongodb://173.16.10.151:27017";
+
 
 export default  async function handler(req, res) {
   const { body } = req;
@@ -13,7 +13,7 @@ export default  async function handler(req, res) {
     
   });
 
-    const client = await new MongoClient(mongoURI);
+    const client = await new MongoClient(process.env.DB_URI);
     const db = await client.db("Matriz");
     const pacientes = await db.collection("politicas");
    
